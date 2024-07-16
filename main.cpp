@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include "geom.h"
+//#include "geom.h"
 #include "Matrix.hpp"
 
 #define MAX_TRIANG_NUM 1000000
@@ -8,7 +8,7 @@
 
 int main(void) {
     size_t N = 0;
-    std::cin >> N;
+    /*std::cin >> N;
     if((N < MIN_TRIANG_NUM) || 
        (N > MAX_TRIANG_NUM)) {
         std::cout << "Incorrect N";
@@ -24,7 +24,7 @@ int main(void) {
         std::cin >> trBuf.Z;
         std::cin >> trBuf.R;
         triangs.emplace_back(trBuf);
-    }
+    }*/
 
     int matrixData[2][2] = {{0, 1}, 
                             {2, 3}};
@@ -33,6 +33,10 @@ int main(void) {
     ptr[1] = matrixData[1];
 
     Matrix<int> m(2, ptr);
-    std::cout << m.calcD(m.mFull);
+    std::cout << m.calcD(m.mFull) << std::endl;
+    std::vector<int> x = m.getUpStringCoef(m.mFull);
+    for(auto& i: x)
+        std::cout << i << ' ' << std::endl;
+
 
 }
