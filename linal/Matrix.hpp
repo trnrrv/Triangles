@@ -29,6 +29,7 @@ public:
     std::vector<T> getUpStringCoef(struct MatrixData m);
 };
 
+
 template <typename T> 
 T Matrix<T>::calcD(struct Matrix<T>::MatrixData m) {
     T cumulSum = 0;
@@ -84,4 +85,3 @@ std::vector<T> Matrix<T>::getUpStringCoef(struct Matrix<T>::MatrixData m) {
     }
     return coefs;
 }
-
